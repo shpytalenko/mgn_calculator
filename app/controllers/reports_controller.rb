@@ -14,6 +14,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
+    @report.day_id = params[:day]
     respond_with(@report)
   end
 
@@ -23,7 +24,7 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     flash[:notice] = 'Report was successfully created.' if @report.save
-    respond_with(@report)
+    respond_with(@report.day)
   end
 
   def update
@@ -42,6 +43,6 @@ class ReportsController < ApplicationController
     end
 
     def report_params
-      params.require(:report).permit(:worker_id, :clock_in, :clock_out, :tips, :salary_complition, :total_after_complition)
+      params.require(:report).permit(:worker_id, :day_id, :clock_in, :clock_out, :tips, :salary_complition, :total_after_complition)
     end
 end

@@ -1,4 +1,6 @@
 = form_for @report, html: { class: "form form-horizontal report" } do |f|
+  
+  = f.hidden_field :day_id, :class => 'form-control'
   .form-group
     = f.label :worker_id, :class => 'control-label col-lg-2'
     .col-lg-10

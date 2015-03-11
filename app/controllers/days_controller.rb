@@ -9,6 +9,7 @@ class DaysController < ApplicationController
   end
 
   def show
+    @reports = @day.reports
     respond_with(@day)
   end
 

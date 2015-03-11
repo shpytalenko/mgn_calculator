@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311214746) do
+ActiveRecord::Schema.define(version: 20150311222222) do
 
   create_table "days", force: true do |t|
     t.datetime "date"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150311214746) do
     t.string   "total_after_complition"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "day_id"
   end
 
   add_index "reports", ["worker_id"], name: "index_reports_on_worker_id"
