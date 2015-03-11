@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311180546) do
+ActiveRecord::Schema.define(version: 20150311214746) do
+
+  create_table "days", force: true do |t|
+    t.datetime "date"
+    t.string   "total_tips"
+    t.string   "total_hours"
+    t.string   "total_tips_per_hour"
+    t.string   "total_complition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "reports", force: true do |t|
     t.integer  "worker_id"

@@ -1,0 +1,14 @@
+= simple_form_for @day, :html => { :class => "form-horizontal" } do |f|
+  = f.input :date
+  /= error_span(@day[:date])
+  = f.input :total_tips
+  /= error_span(@day[:total_tips])
+  = f.input :total_hours
+  /= error_span(@day[:total_hours])
+  = f.input :total_tips_per_hour
+  /= error_span(@day[:total_tips_per_hour])
+  = f.input :total_complition
+  /= error_span(@day[:total_complition])
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), days_path, :class => 'btn btn-default'

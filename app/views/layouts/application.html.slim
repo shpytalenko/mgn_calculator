@@ -26,11 +26,20 @@ html lang="en"
             span.icon-bar
             span.icon-bar
           a.navbar-brand href="#"MgnCalculator
-          .navbar-collapse.collapse.navbar-responsive-collapse
-            ul.nav.navbar-nav
-              li= link_to "Workers", "/workers"
-              li= link_to "Reports", "/reports"
-
+          - if user_signed_in? 
+            .navbar-collapse.collapse.navbar-responsive-collapse
+              ul.nav.navbar-nav
+                li= link_to "Workers", "/workers"
+                li= link_to "Reports", "/reports"
+                li= link_to "Days", "/days"
+              ul.nav.navbar-nav.navbar-right
+                - if user_signed_in?  
+                  li.divider-vertical
+                    a href=(edit_user_registration_path(:method => :get)) 
+                      = current_user.email
+                  li.divider-vertical
+                    a data-method="delete" href=destroy_user_session_path 
+                      | Logout
     .container
       .row
         .col-lg-9
