@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311171931) do
+ActiveRecord::Schema.define(version: 20150311180546) do
+
+  create_table "reports", force: true do |t|
+    t.integer  "worker_id"
+    t.time     "clock_in"
+    t.time     "clock_out"
+    t.string   "tips"
+    t.string   "salary_complition"
+    t.string   "total_after_complition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports", ["worker_id"], name: "index_reports_on_worker_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,5 +44,13 @@ ActiveRecord::Schema.define(version: 20150311171931) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "workers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

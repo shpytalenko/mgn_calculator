@@ -1,0 +1,34 @@
+- model_class = Report
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:worker_id) + ':'
+  br
+  = @report.worker_id
+p
+  strong= model_class.human_attribute_name(:clock_in) + ':'
+  br
+  = @report.clock_in
+p
+  strong= model_class.human_attribute_name(:clock_out) + ':'
+  br
+  = @report.clock_out
+p
+  strong= model_class.human_attribute_name(:tips) + ':'
+  br
+  = @report.tips
+p
+  strong= model_class.human_attribute_name(:salary_complition) + ':'
+  br
+  = @report.salary_complition
+p
+  strong= model_class.human_attribute_name(:total_after_complition) + ':'
+  br
+  = @report.total_after_complition
+
+= link_to t('.back', :default => t("helpers.links.back")), reports_path, :class => 'btn btn-default'
+'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_report_path(@report), :class => 'btn btn-default'
+'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), report_path(@report), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
