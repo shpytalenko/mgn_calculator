@@ -30,6 +30,7 @@ table.table.table-striped
       th= model_class.human_attribute_name(:worker_id)
       th= model_class.human_attribute_name(:clock_in)
       th= model_class.human_attribute_name(:clock_out)
+      th= model_class.human_attribute_name(:total_hours)
       th= model_class.human_attribute_name(:tips)
       th= model_class.human_attribute_name(:salary_complition)
       th= model_class.human_attribute_name(:total_after_complition)
@@ -42,6 +43,7 @@ table.table.table-striped
         td= report.worker_id
         td= report.clock_in
         td= report.clock_out
+        td= report.total_hours
         td= report.tips
         td= report.salary_complition
         td= report.total_after_complition
