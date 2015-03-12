@@ -16,11 +16,11 @@ table.table.table-striped
     - @days.each do |day|
       tr
         td= link_to day.id, day_path(day)
-        td= day.date.to_date
+        td= link_to day.date.to_date , day_path(day), :class=>"btn btn-default btn-xs"
         td= day.total_tips
-        td= day.total_hours
-        td= day.total_tips_per_hour
-        td= day.total_complition
+        td= day.total_time
+        td= day.total_tips_hour
+        td= day.total_compl
         /td=l day.created_at
         /td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_day_path(day), :class => 'btn btn-default btn-xs'
