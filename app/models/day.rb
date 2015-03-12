@@ -15,6 +15,6 @@ class Day < ActiveRecord::Base
   end
 
   def total_compl
-    self.reports.map {|x| x.salary_complition.to_d rescue 0}.inject(0, :+).to_s
+    self.reports.map {|x| x.salary_compl.to_d rescue 0}.inject(0, :+).to_s
   end
 end
